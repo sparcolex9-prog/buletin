@@ -1,0 +1,3 @@
+Disallow: 
+Disallow: /cgi-bin/
+Sitemap: https://sparcolex9-prog.github.io/buletin/sitemap.xml
