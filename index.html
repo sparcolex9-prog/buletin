@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tekno Update | Berita, Analisis, dan Inovasi Kecerdasan Buatan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@500;900&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset Sederhana */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Gaya Tema Retro-Futurisme AI (Dark Mode & Neon) */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0d0d1e; /* Biru sangat gelap / ungu tua */
+            color: #d8d8f0; /* Teks putih kebiruan */
+            line-height: 1.6;
+            padding-top: 60px; /* Jarak untuk Fixed Header */
+        }
+        
+        /* Header Navigasi Tetap */
+        .header-nav {
+            background-color: #1a1a33;
+            color: #00ffc0;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
+        }
+
+        .header-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Logo */
+        .logo h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8em;
+            color: #00ffc0;
+            text-shadow: 0 0 5px #00ffc0;
+        }
+
+        /* Menu Navigasi */
+        .nav-links a {
+            color: #d8d8f0;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        .nav-links a:hover {
+            color: #ff6b6b;
+            text-shadow: 0 0 5px #ff6b6b;
+        }
+        
+        /* Konten Utama */
+        .main-content {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* Kolom utama dan sidebar */
+            gap: 30px;
+        }
+        
+        /* Gaya Artikel Utama/Headline */
+        .headline-article {
+            background-color: #2a2a47;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(255, 107, 107, 0.1);
+        }
+
+        .headline-article h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #ff6b6b;
+            font-size: 2em;
+            margin-bottom: 15px;
+            text-shadow: 0 0 3px #ff6b6b;
+        }
+
+        .headline-article img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 3px solid #00ffc0;
+        }
+        
+        .image-caption {
+            font-size: 0.85em;
+            color: #a0a0a0;
+            text-align: right;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            border-bottom: 1px dotted #3a3a5a;
+            padding-bottom: 5px;
+        }
+
+        /* Gaya Artikel Lain */
+        .latest-news h3 {
+            color: #00ffc0;
+            border-left: 4px solid #00ffc0;
+            padding-left: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .article-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #3a3a5a;
+        }
+
+        .article-item img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-right: 15px;
+            border: 1px solid #4a4a6a;
+        }
+
+        .article-item h4 {
+            color: #d8d8f0;
+            margin-top: 0;
+            font-size: 1.1em;
+            line-height: 1.4;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background-color: #1a1a33;
+            padding: 20px;
+            border-radius: 12px;
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            color: #ff6b6b;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #ff6b6b;
+        }
+
+        .popular-list li {
+            list-style-type: none;
+            margin-bottom: 10px;
+            padding-left: 0;
+        }
+
+        .popular-list li a {
+            color: #d8d8f0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .popular-list li a:hover {
+            color: #00ffc0;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 40px;
+            background-color: #1a1a33;
+            border-top: 3px solid #ff6b6b;
+            font-size: 0.9em;
+            color: #a0a0a0;
+        }
+        
+        /* Responsif Sederhana */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-links {
+                margin-top: 10px;
+            }
+            .nav-links a {
+                margin: 0 8px;
+            }
+            .article-item {
+                flex-direction: column;
+                align-items: center;
+            }
+            .article-item img {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-nav">
+        <div class="header-container">
+            <div class="logo">
+                <h1>AI Tekno Update</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="#home">Beranda</a>
+                <a href="#generative">Generatif</a>
+                <a href="#etika">Etika & Regulasi</a>
+                <a href="#kesehatan">Kesehatan</a>
+                <a href="#kontak">Hubungi Kami</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-content">
+        
+        <main class="primary-column">
+
+            <section class="headline-article" id="generative">
+                <h2>Generative AI: Kreativitas Tanpa Batas dan Tantangan Etika Baru</h2>
+                <p style="color: #a0a0a0; font-size: 0.9em;">*Rabu, 5 November 2025 | Oleh: Editor AI Tekno</p>
+                
+                <img src="https://imagizer.imageshack.com/img922/3562/FDQuFv.jpg" alt="Gambar hasil AI tentang Kreativitas Digital Tak Batas dengan tema futuristik">
+                <p class="image-caption">Visualisasi kreasi digital tak terbatas, dibuat oleh Generative AI. (Sumber: AI Creation)</p>
+
+                <p>Teknologi **Generative AI** telah menjadi sorotan utama, merevolusi cara kita berinteraksi dengan komputer. Model-model canggih kini mampu menghasilkan konten yang sulit dibedakan dari karya manusia—mulai dari teks, kode program, hingga karya seni visual. Perkembangan ini tidak hanya menjanjikan efisiensi dan kreativitas baru, tetapi juga memicu diskusi serius tentang **hak cipta, keaslian, dan masa depan pekerjaan kreatif**.</p>
+                <p>Para ahli memprediksi bahwa dalam 5 tahun ke depan, setiap aplikasi dan platform digital akan mengintegrasikan kemampuan AI Generatif untuk meningkatkan pengalaman pengguna.</p>
+                <a href="#" style="color: #ff6b6b; font-weight: bold; display: block; margin-top: 15px;">Baca Selengkapnya...</a>
+            </section>
+            
+            <br>
+            
+            <section class="latest-news">
+                <h3>📰 Berita AI Terbaru</h3>
+                
+                <div class="article-item" id="etika">
+                    <img src="https://imagizer.imageshack.com/img923/5426/NdcETn.jpg" alt="Gambar AI tentang Keseimbangan Hukum dan Teknologi">
+                    <div>
+                        <h4>Regulasi Global AI Menguat: Uni Eropa Memimpin, Fokus pada Akuntabilitas</h4>
+                        <p style="font-size: 0.9em; color: #a0a0a0;">*Regulasi dan Etika | 2 jam lalu</p>
+                        <p>Pembahasan mengenai kerangka hukum AI semakin mendesak. Uni Eropa sedang menyusun undang-undang AI yang ketat, menargetkan transparansi dan pencegahan bias algoritmik. Ini menjadi cetak biru global...</p>
+                    </div>
+                </div>
+                
+                <div class="article-item" id="kesehatan">
+                    <img src="https://imagizer.imageshack.com/img922/5513/q8UfrH.jpg" alt="Gambar AI tentang Diagnosa Medis Canggih">
+                    <div>
+                        <h4>Terapi Personal dengan AI: Revolusi Diagnosa Kanker Dini dan Presisi</h4>
+                        <p style="font-size: 0.9em; color: #a0a0a0;">*Kesehatan & Sains | 1 hari lalu</p>
+                        <p>AI kini digunakan untuk menganalisis data genetik dan pencitraan medis, memungkinkan diagnosa penyakit kritis seperti kanker pada tahap sangat awal dengan tingkat akurasi yang lebih tinggi dari sebelumnya...</p>
+                    </div>
+                </div>
+
+                <div class="article-item">
+                    <img src="https://imagizer.imageshack.com/img923/1687/29hZZ0.jpg" alt="Gambar AI tentang Perangkat Edge Computing">
+                    <div>
+                        <h4>Edge AI Dorong Kendaraan Otonom Lebih Aman dan Cepat Respons</h4>
+                        <p style="font-size: 0.9em; color: #a0a0a0;">*IoT & Infrastruktur | 3 hari lalu</p>
+                        <p>Pemrosesan AI di perangkat lokal (Edge AI) menjadi kunci untuk mengurangi latensi. Ini krusial bagi keselamatan kendaraan otonom dan pengembangan *smart city*...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <h3>📈 Paling Populer</h3>
+            <ul class="popular-list">
+                <li><a href="#">AI dan Masa Depan Pekerjaan: Kolaborasi atau Substitusi?</a></li>
+                <li><a href="#">Review: ChatGPT 5.0 dan Kemampuan Multimodal yang Mengejutkan</a></li>
+                <li><a href="#">Inovasi Chipset AI Generasi Terbaru: Lebih Cepat, Lebih Efisien</a></li>
+                <li><a href="#">Mengenal Ancaman Deepfake Audio dan Cara Mendeteksinya</a></li>
+                <li><a href="#">Startup AI Indonesia Raih Pendanaan Seri B untuk Edukasi</a></li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">📢 Iklan</h3>
+            
+            <div style="background-color: #00ffc0; color: #1a1a33; padding: 15px; text-align: center; border-radius: 8px; font-weight: bold; box-shadow: 0 0 10px rgba(0, 255, 192, 0.5);">
+                INFORMASI PENTING !!
+                <p style="font-size: 0.8em; margin-top: 5px;"> Heroslot77 : Situs Slot Gacor Nomor 1 dengan tingkat kemenangan terbaik .</p>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 AI Tekno Update. Seluruh Hak Cipta Dilindungi.</p>
+        <p><a href="#privasi" style="color: #a0a0a0; text-decoration: none;">Kebijakan Privasi</a> | <a href="#syarat" style="color: #a0a0a0; text-decoration: none;">Syarat Penggunaan</a></p>
+    </footer>
+
+</body>
+</html>
